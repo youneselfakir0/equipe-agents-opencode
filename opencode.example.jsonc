@@ -1,0 +1,62 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "_commentaire": [
+    "Config d'exemple pour l'équipe d'agents décrite dans le README.",
+    "Copier ce fichier vers ~/.config/opencode/opencode.json ou ./.opencode/opencode.json",
+    "et merger avec votre config existante — ne pas écraser ce que vous avez déjà.",
+    "",
+    "Les agents eux-mêmes vivent dans agents/*.md ; ce fichier ne contient que la",
+    "politique transverse qui s'applique à tous."
+  ],
+
+  "default_agent": "lead",
+
+  "permissions": [
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "npm test *", "effect": "allow" },
+    { "action": "shell", "resource": "npm run build *", "effect": "allow" },
+    { "action": "shell", "resource": "*", "effect": "ask" },
+
+    { "action": "edit", "resource": "*", "effect": "ask" }
+  ],
+
+  "_permissions_a_noter": [
+    "La dernière règle qui matche gagne.",
+    "Ici shell est en ASK par défaut avec des exceptions ALLOW en tête :",
+    "un agent peut inspecter le dépôt sans jamais demander la permission.",
+    "",
+    "Les permissions d'écriture par agent sont dans agents/*.md, pas ici —",
+    "chaque agent a son propre périmètre, déclaré au plus près de lui."
+  ],
+
+  "agents": {
+    "lead": { "_ref": "agents/lead.md" },
+    "frontend": { "_ref": "agents/frontend.md" },
+    "backend": { "_ref": "agents/backend.md" },
+    "qa": { "_ref": "agents/qa.md" },
+    "reviewer": { "_ref": "agents/reviewer.md" }
+  },
+
+  "_agents_a_noter": [
+    "Les agents sont définis en Markdown dans agents/. Ce bloc ne sert qu'à documenter",
+    "ce qui existe ; OpenCode découvre les fichiers .md automatiquement.",
+    "",
+    "Pour une config 100% JSONC équivalente (sans fichiers .md), le champ `system`",
+    "remplace le corps du Markdown :",
+    "",
+    "  \"agents\": {",
+    "    \"reviewer\": {",
+    "      \"description\": \"Revue de code en lecture seule\",",
+    "      \"mode\": \"subagent\",",
+    "      \"system\": \"Tu es le relecteur...\"",
+    "      \"permissions\": [",
+    "        { \"action\": \"*\", \"resource\": \"*\", \"effect\": \"deny\" },",
+    "        { \"action\": \"read\", \"resource\": \"*\", \"effect\": \"allow\" }",
+    "      ]",
+    "    }",
+    "  }"
+  ]
+}

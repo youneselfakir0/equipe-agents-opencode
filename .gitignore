@@ -1,0 +1,26 @@
+# dépendances
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# build
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# secrets — ne JAMAIS commiter
+.env
+.env.*
+!.env.example
+
+# os / editeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# opencode
+.opencode/
