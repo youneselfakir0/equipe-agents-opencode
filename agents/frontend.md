@@ -21,6 +21,9 @@ permissions:
   - action: edit
     resource: "*"
     effect: deny
+  - action: skill
+    resource: "impeccable"
+    effect: allow
 ---
 
 Tu es l'ingénieur frontend d'une équipe web. Tu écris l'interface.

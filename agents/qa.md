@@ -3,11 +3,20 @@ description: Ingénieur QA — tests, vérification, reproduction de bugs
 mode: subagent
 color: "#ffd43b"
 permissions:
-  - action: edit
+  - action: read
     resource: "*"
     effect: allow
   - action: edit
     resource: "tests/**"
+    effect: allow
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "npm test *"
+    effect: allow
+  - action: shell
+    resource: "npm run build *"
     effect: allow
   - action: shell
     resource: "*"

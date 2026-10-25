@@ -20,7 +20,9 @@
     { "action": "shell", "resource": "npm run build *", "effect": "allow" },
     { "action": "shell", "resource": "*", "effect": "ask" },
 
-    { "action": "edit", "resource": "*", "effect": "ask" }
+    { "action": "edit", "resource": "*", "effect": "ask" },
+
+    { "action": "skill", "resource": "*", "effect": "allow" }
   ],
 
   "_permissions_a_noter": [
@@ -37,7 +39,10 @@
     "frontend": { "_ref": "agents/frontend.md" },
     "backend": { "_ref": "agents/backend.md" },
     "qa": { "_ref": "agents/qa.md" },
-    "reviewer": { "_ref": "agents/reviewer.md" }
+    "reviewer": { "_ref": "agents/reviewer.md" },
+    "integrator": { "_ref": "agents/integrator.md" },
+    "designer": { "_ref": "agents/designer.md" },
+    "docwriter": { "_ref": "agents/docwriter.md" }
   },
 
   "_agents_a_noter": [
