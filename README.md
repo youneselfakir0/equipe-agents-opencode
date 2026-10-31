@@ -1,6 +1,6 @@
 # Construire une équipe d'agents IA pour le développement web
 
-**Younes El Fakir** — DEP Soutien informatique, Cégep de Longueuil
+**Younes El Fakir** — DEP Soutien informatique, CFP des Patriotes.
 
 > **Note de laboratoire / article de portfolio.** Projet d'apprentissage personnel, pas une
 > livraison client. Le code est réel et exécutable ; les limites sont documentées honnêtement.
